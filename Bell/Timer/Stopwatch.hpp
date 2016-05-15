@@ -29,6 +29,17 @@ namespace Bell { namespace Timer {
 		using duration		= typename Clock::duration;
 
 		/**
+		 * @brief      グローバルストップウォッチインスタンスの取得
+		 *
+		 * @return     グローバルストップウォッチ
+		 */
+		static BasicStopwatch& globalStopwatch() noexcept
+		{
+			static BasicStopwatch stopwatch;
+			return stopwatch;
+		}
+
+		/**
 		 * @brief      BasicStopwatch ctor
 		 */
 		explicit BasicStopwatch() noexcept

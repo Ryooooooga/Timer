@@ -11,7 +11,7 @@
 
 #include <chrono>
 
-namespace Bell { namespace Timer {
+namespace Bell::Timer {
 
 	/**
 	 * @brief      ストップウォッチ
@@ -27,17 +27,6 @@ namespace Bell { namespace Timer {
 		using clock_type	= Clock;
 		using time_point	= typename Clock::time_point;
 		using duration		= typename Clock::duration;
-
-		/**
-		 * @brief      グローバルストップウォッチインスタンスの取得
-		 *
-		 * @return     グローバルストップウォッチ
-		 */
-		static BasicStopwatch& globalStopwatch() noexcept
-		{
-			static BasicStopwatch stopwatch;
-			return stopwatch;
-		}
 
 		/**
 		 * @brief      BasicStopwatch ctor
@@ -76,4 +65,4 @@ namespace Bell { namespace Timer {
 	using HiresolutionStopwatch	= BasicStopwatch<std::chrono::high_resolution_clock>;
 	using SteadyStopwatch		= BasicStopwatch<std::chrono::steady_clock>;
 
-}}	//	namespace Bell::Timer
+}	//	namespace Bell::Timer
